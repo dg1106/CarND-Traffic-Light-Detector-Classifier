@@ -1,22 +1,21 @@
-## Traffic Light Detector and Classifier
-
+# Traffic Light Detector and Classifier
 This project is a Part of the CarND Capstone project.
 
-I am a part of the team `Bos-Robo-Car` and was assigned a task to detect and classify a traffic light color on the 
-incoming images from Simulator or from Carla (Udacity Self Driving Car).
+I referenced code from the team [Bos-Robo-Car's Traffic Light Detector Classifier](https://github.com/ooleksyuk/CarND-Traffic-Light-Detector-Classifier).
 
-* First part of the project is to Detect the traffic light on the incoming image.
-* Second part fo the project is to Classify the traffic light color on the detected traffic light.
+* First part : Detect the traffic light on the incoming image.
+* Second part : Classify the traffic light color on the detected traffic light.
 
+---
 ## Traffic Light Detector
 
 The project is aimed at detecting traffic light on the incoming picture either from Simulator or from Carla.
 
-For the traffic light detection I've used a previously trained model and weights from [Kaggle Ultrasound Nerve Segmentation](https://github.com/ooleksyuk/kaggle-ultrasound-nerve-segmentation).
+For the traffic light detection, I've referenced a previously trained model and weights from ooleksyuk's github project : [Kaggle Ultrasound Nerve Segmentation](https://github.com/ooleksyuk/kaggle-ultrasound-nerve-segmentation).
 
 The weights are located in `weights.h5`. Data for training was provided by Udacity from ros bag (traffic_light_bag_files). It's ignored because files can be downloaded from Udacity website and unpack using RosBag instructions.
 
-I've used a pre-trained model that looks like this 
+pre-trained model that looks like this 
 
 ```bash
 ____________________________________________________________________________________________________
@@ -129,6 +128,7 @@ tl_detector_carla.h5
 tl_detector_sim.h5
 ```
 
+---
 ## Predicted images examples
 
 ### Carla
@@ -148,10 +148,10 @@ tl_detector_sim.h5
 ![Simulator Red Test Image](./tl_detector/sim/data/test/red/session1_6.jpg)
 ![Simulator Red Predicted Image](./tl_detector/preds/sim/data/test/red/session1_6.pred.png)
 
-![Simulator Yellow Test Image](./sim/tl_detector/data/test/yellow/left0800.jpg)
+![Simulator Yellow Test Image](./tl_detector/sim/data/test/yellow/left0800.jpg)
 ![Simulator Yellow Predicted Image](./tl_detector/preds/sim/data/test/yellow/left0800.pred.png)
 
-
+---
 ## Traffic light Classifier
 
 The project is aimed at classifying traffic light on the incoming picture either from Simulator or from Carla.
@@ -209,6 +209,8 @@ epochs=30,
 validation_split=0.1, 
 shuffle=True
 ```
+
+
 For Simulator I had more data samples and used `batch_size=128` as for Carla was I had to increase `batch_size=256` to predictions.
 
 Here is an example of light color prediction for Carla and Simulator:
